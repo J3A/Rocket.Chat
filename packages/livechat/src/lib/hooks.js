@@ -43,7 +43,10 @@ const api = {
 		CustomFields.setCustomField(key, value, overwrite);
 	},
 
-	setTheme({ color, fontColor, iconColor, title, offlineTitle } = {}) {
+	setTheme({ color, fontColor, iconColor, title, offlineTitle, fontFaces = [] } = {}) {
+		fontFaces.forEach(fontFace => {
+			new FontFace(fontFace.family, fontFace.src, fontFace.descriptor).load()
+		})
 		const { iframe, iframe: { theme } } = store.state;
 		store.setState({
 			iframe: {
@@ -55,6 +58,7 @@ const api = {
 					iconColor,
 					title,
 					offlineTitle,
+					fontFaces,
 				},
 			},
 		});

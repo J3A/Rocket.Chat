@@ -1,15 +1,20 @@
 {
-	"name": "@rocket.chat/livechat",
+	"name": "@j3a/rocketchat-livechat",
 	"version": "1.13.3",
+	"main": "dist/rocketchat-livechat.min.js",
+	"private": false,
 	"files": [
-		"/build"
+		"/build",
+		"dist"
 	],
-	"private": true,
 	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/RocketChat/Rocket.Chat.Livechat"
 	},
+	"publishConfig": {
+    "access": "public"
+  },
 	"scripts": {
 		"clean": "rimraf dist",
 		"build": "webpack-cli --mode production",
@@ -23,7 +28,8 @@
 		"loki:update": "loki update --chromeDockerImage=chinello/alpine-chrome:latest --chromeFlags=\"--headless --no-sandbox --disable-gpu --disable-features=VizDisplayCompositor\" --verboseRenderer --requireReference --reactUri file:./storybook-static",
 		"build-storybook": "build-storybook",
 		"build-storybook:loki": "cross-env NODE_ENV=loki build-storybook",
-		"update-storybook": "cross-env NODE_ENV=loki run-s build-storybook loki:update"
+		"update-storybook": "cross-env NODE_ENV=loki run-s build-storybook loki:update",
+		"prepublish": "yarn clean && yarn build"
 	},
 	"devDependencies": {
 		"@babel/preset-env": "^7.11.5",

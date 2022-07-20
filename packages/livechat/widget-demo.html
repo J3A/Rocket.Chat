@@ -39,6 +39,7 @@
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, quibusdam recusandae repudiandae itaque ipsa molestias similique dolore cumque? Omnis neque voluptates magni rem molestiae earum! Voluptate amet laudantium quo ut?
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, nobis velit delectus commodi nisi itaque magnam praesentium ipsam. Suscipit accusamus eaque tenetur cumque soluta ea repellat, culpa magni consectetur. At!
 	</div>
+	<button id="toggle">Toggle chat</button>
 
 	<script>
 		(function(w, d, s, u) {
@@ -48,9 +49,9 @@
 			var h = d.getElementsByTagName(s)[0],
 				j = d.createElement(s);
 			j.async = true;
-			j.src = 'build/rocketchat-livechat.min.js?_=' + Math.random();
+			j.src = u + '/rocketchat-livechat.min.js?_=' + Math.random();
 			h.parentNode.insertBefore(j, h);
-		})(window, document, 'script', 'http://localhost:8080');
+		})(window, document, 'script', 'http://localhost:8081');
 		RocketChat(function() {
 			this.setTheme({
 				color: '#04436A', // widget title background color
@@ -59,6 +60,18 @@
 				title: "Welcome to Rocket.Chat", // default widget title when the status of service is online
 				offlineTitle: "Service is offline", // default widget title when the status of service is online
 			});
+			const button = document.getElementById("toggle");
+			let isOpen = false;
+			button.addEventListener("click", () => {
+				if (isOpen) {
+					this.minimizeWidget()
+					isOpen = false
+				} else {
+					this.maximizeWidget()
+					isOpen = true
+				}
+			})
+			
 		});
 	</script>
 </body>

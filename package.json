@@ -35,7 +35,7 @@
 	"homepage": "https://github.com/RocketChat/Rocket.Chat#readme",
 	"engines": {
 		"yarn": "3.2.0",
-		"node": "14.18.3",
+		"node": "16",
 		"npm": "Use yarn instead"
 	},
 	"packageManager": "yarn@3.2.0",
@@ -49,5 +49,8 @@
 			"apps/meteor/.docker/Dockerfile.rhel",
 			"apps/meteor/app/utils/rocketchat.info"
 		]
+	},
+	"dependencies": {
+		"node-gyp": "^9.1.0"
 	}
 }

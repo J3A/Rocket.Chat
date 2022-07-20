@@ -27,7 +27,7 @@ export const ScreenFooter = ({ children, options, limit }) => (
 		<FooterContent>
 			{options}
 			{limit}
-			<PoweredBy />
+			{/* <PoweredBy /> */}
 		</FooterContent>
 	</Footer>
 );
@@ -136,14 +136,14 @@ export const Screen = ({
 			</PopoverContainer>
 		</div>
 
-		<ChatButton
+		{/* <ChatButton
 			agent={agent}
 			triggered={triggered}
 			text={title}
 			badge={unread}
 			minimized={minimized}
 			onClick={minimized ? onRestore : onMinimize}
-		/>
+		/> */}
 
 		{sound && <Sound src={sound.src} play={sound.play} onStop={onSoundStop} dismissNotification={dismissNotification} />}
 	</div>
