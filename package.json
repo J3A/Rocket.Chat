@@ -5,7 +5,6 @@
 	"main": "index.js",
 	"private": true,
 	"scripts": {
-		"postinstall": "husky install",
 		"build": "turbo run build",
 		"build:services": "turbo run build --filter=rocketchat-services...",
 		"build:ci": "turbo run build:ci",
@@ -18,7 +17,6 @@
 	"devDependencies": {
 		"@types/chart.js": "^2.9.37",
 		"@types/js-yaml": "^4.0.5",
-		"husky": "^7.0.4",
 		"turbo": "~1.2.16"
 	},
 	"workspaces": [

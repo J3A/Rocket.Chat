@@ -1,15 +1,19 @@
 {
-	"name": "@rocket.chat/livechat",
+	"name": "@j3a/rocketchat-livechat",
 	"version": "1.13.3",
+	"main": "dist/rocketchat-livechat.min.js",
 	"files": [
-		"/build"
+		"/build",
+		"dist"
 	],
-	"private": true,
 	"license": "MIT",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/RocketChat/Rocket.Chat",
 		"directory": "packages/livechat"
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"scripts": {
 		"clean": "rimraf dist",
