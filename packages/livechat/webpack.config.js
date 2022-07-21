@@ -169,7 +169,7 @@ module.exports = (env, argv) => [
 			compress: true,
 			publicPath: argv.mode === 'production' ? 'livechat/' : '/',
 			contentBase: path.resolve(__dirname, './src'),
-			port: 8080,
+			port: 8081,
 			host: '0.0.0.0',
 			disableHostCheck: true,
 			historyApiFallback: true,
