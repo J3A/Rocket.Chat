@@ -1,6 +1,6 @@
 {
 	"name": "@j3a/rocketchat-livechat",
-	"version": "1.13.3",
+	"version": "1.13.3-5.0.0-rc.11",
 	"main": "dist/rocketchat-livechat.min.js",
 	"files": [
 		"/build",
@@ -22,6 +22,7 @@
 		"start": "webpack-dev-server --mode development",
 		"lint": "run-s eslint stylelint",
 		"eslint": "eslint src",
+		"prepublish": "yarn clean && yarn build",
 		"stylelint": "stylelint 'src/**/*.scss'",
 		"storybook": "start-storybook -p 9001 -c .storybook",
 		"build-storybook": "build-storybook"
