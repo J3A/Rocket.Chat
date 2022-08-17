@@ -22488,7 +22488,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"node-gyp@npm:latest":
+"node-gyp@npm:^9.1.0, node-gyp@npm:latest":
   version: 9.1.0
   resolution: "node-gyp@npm:9.1.0"
   dependencies:
@@ -27152,6 +27152,7 @@ __metadata:
   dependencies:
     "@types/chart.js": ^2.9.37
     "@types/js-yaml": ^4.0.5
+    node-gyp: ^9.1.0
     turbo: ~1.2.16
   languageName: unknown
   linkType: soft
