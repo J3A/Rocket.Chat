@@ -11,7 +11,7 @@ const WIDGET_OPEN_HEIGHT = 525;
 const WIDGET_MINIMIZED_WIDTH = 54;
 const WIDGET_MINIMIZED_HEIGHT = 54;
 const WIDGET_MARGIN = 16;
-
+const WIDGET_DESKTOP_BOTTOM_POSITION = "88px";
 
 window.RocketChat = window.RocketChat || { _: [] };
 const config = {};
@@ -81,6 +81,7 @@ const updateWidgetStyle = (isOpened) => {
 	}
 
 	if (isOpened) {
+		widget.style.bottom = smallScreen? '0' : WIDGET_DESKTOP_BOTTOM_POSITION;
 		widget.style.left = smallScreen ? '0' : 'auto';
 
 		/**
@@ -107,7 +108,7 @@ const createWidget = (url) => {
 	widget.style.width = `${ WIDGET_MARGIN + WIDGET_MINIMIZED_WIDTH + WIDGET_MARGIN }px`;
 	widget.style.height = `${ WIDGET_MARGIN + WIDGET_MINIMIZED_HEIGHT + WIDGET_MARGIN }px`;
 	widget.style.maxHeight = '100vh';
-	widget.style.bottom = '0';
+	widget.style.bottom = WIDGET_DESKTOP_BOTTOM_POSITION;
 	widget.style.right = '0';
 	widget.style.zIndex = '12345';
 	widget.dataset.state = 'closed';
@@ -207,6 +208,11 @@ const api = {
 
 	openWidget() {
 		openWidget();
+	},
+
+	// NOTE: this should be committed to upstream
+	closeWidget() {
+		closeWidget();
 	},
 
 	resizeWidget(height) {
