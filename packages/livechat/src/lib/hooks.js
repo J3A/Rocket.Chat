@@ -34,7 +34,8 @@ const api = {
 			Triggers.processRequest(info);
 		}
 
-		const { token, room: { _id: rid } = {} } = store.state;
+		const { token, room } = store.state;
+		const rid = room?._id;
 		const { change, title, location: { href } } = info;
 
 		Livechat.sendVisitorNavigation({ token, rid, pageInfo: { change, title, location: { href } } });
