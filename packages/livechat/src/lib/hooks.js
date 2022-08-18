@@ -35,6 +35,7 @@ const api = {
 		}
 
 		const { token, room } = store.state;
+		// destructuring with default doesn't work in Firefox after babel transpile
 		const rid = room?._id;
 		const { change, title, location: { href } } = info;
 
